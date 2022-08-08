@@ -5,7 +5,9 @@
 	<menu>
         <scriptItem id="documenting_your_assets">
             <label>Documenting your assets</label>
-                <scriptCode><![CDATA[hou.ui.displayMessage("Hello World")]]>
+                <scriptCode><![CDATA[
+import document_your_node.main as doc
+doc.show()]]>
                 </scriptCode>
         </scriptItem>
 	</menu>
