@@ -1,0 +1,12 @@
+<menuDocument>
+	<!-- menuDocument can only contain 1 menu element, whose id is 
+         implicitly "root_menu"
+      -->
+	<menu>
+        <scriptItem id="documenting_your_assets">
+            <label>Documenting your assets</label>
+                <scriptCode><![CDATA[hou.ui.displayMessage("Hello World")]]>
+                </scriptCode>
+        </scriptItem>
+	</menu>
+</menuDocument>
