@@ -11,11 +11,15 @@ class MainWidgets(QtWidgets.QWidget):
         # load ui file
         loader = QtUiTools.QUiLoader()
         self.ui = loader.load(ui_file_main,parentWidget=self)
-
+        self.resize(800,1000)
         self.setParent(hou.qt.mainWindow(), QtCore.Qt.Window)
 
     def closeEvent(self, event):
         self.setParent(None)
+
+    def resizeEvent(self,event):
+        self.resize(event.size())
+        event.accept()
     
 
 def show():
