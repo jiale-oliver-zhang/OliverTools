@@ -7,7 +7,12 @@
             <label>Documenting your assets</label>
                 <scriptCode><![CDATA[
 import document_your_node.main as doc
-doc.show()]]>
+node = kwargs.get("node",None)
+if node:
+    doc.show(node)
+
+
+]]>
                 </scriptCode>
         </scriptItem>
 	</menu>

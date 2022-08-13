@@ -5,14 +5,17 @@ import os
 ui_file_main = os.path.join(os.path.dirname(__file__),'ui',"document_your_node_ui.ui")
 class MainWidgets(QtWidgets.QWidget):
     
-    def __init__(self,parent=None):
+    def __init__(self,node,parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         
         # load ui file
         loader = QtUiTools.QUiLoader()
         self.ui = loader.load(ui_file_main,parentWidget=self)
         self.resize(800,1000)
+        self.setFixedSize(800,1000)
         self.setParent(hou.qt.mainWindow(), QtCore.Qt.Window)
+        self.node = node
+        print(self.node)
 
     def closeEvent(self, event):
         self.setParent(None)
@@ -22,8 +25,8 @@ class MainWidgets(QtWidgets.QWidget):
         event.accept()
     
 
-def show():
-    dialog = MainWidgets()
+def show(node):
+    dialog = MainWidgets(node)
     dialog.show()
     return dialog
 
